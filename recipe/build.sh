@@ -13,5 +13,7 @@ sed -i 's/else-comment-2-br.c//' regression/TEST
     --disable-dependency-tracking \
     --prefix=${PREFIX} \
     --mandir=${PREFIX}/share/man
-make -j${CPU_COUNT} check
+if [[ ${CONDA_BUILD_CROSS_COMPILATION:-0} == 0 ]]; then
+    make -j${CPU_COUNT} check
+fi
 make -j${CPU_COUNT} install
