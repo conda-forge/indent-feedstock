@@ -10,7 +10,7 @@ source:
   sha256: 9e64634fc4ce6797b204bcb8897ce14fdd0ab48ca57696f78767c59cae578095
 
 build:
-  number: 1
+  number: 2
   skip: win
 
 requirements:
@@ -26,7 +26,7 @@ requirements:
 
 tests:
   - script:
-      - indent --help 2>&1 | grep -q "usage: "indent\""
+      - "indent --help 2>&1 | grep -q \"usage: \"indent\\\"\""
 
 about:
   license: GPL-3.0-or-later
